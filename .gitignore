@@ -1,0 +1,5 @@
+*
+!.gitignore
+!coc-settings.json
+!init
+!init/*
