@@ -3,7 +3,10 @@ set bs=eol,start,indent
 set autoindent
 set cindent
 set winaltkeys=no
-set nowrap
+set wrap
+set linebreak
+set wrapmargin=4
+set scrolloff=10
 set ttimeout
 set ttimeoutlen=50
 set ruler
@@ -25,6 +28,7 @@ set listchars=tab:\|\ ,trail:.,extends:>,precedes:<
 set ffs=unix,dos,mac
 set laststatus=2
 set number
+set cursorline
 set signcolumn=yes
 set showtabline=2
 set list
@@ -42,6 +46,8 @@ set updatetime=300
 set hidden
 set nobackup
 set nowritebackup
+set mouse=a
+set selectmode=mouse,key
 
 "GUI
 if has("gui_running")
