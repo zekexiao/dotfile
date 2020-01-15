@@ -44,10 +44,20 @@ set shortmess+=c
 set cmdheight=2
 set updatetime=300
 set hidden
-set nobackup
-set nowritebackup
 set mouse=a
 set selectmode=mouse,key
+set noerrorbells
+set autoread
+set listchars=tab:»■,trail:■
+set list
+set backup
+set writebackup
+set undofile
+set swapfile
+set backupdir=~/.vim/.backup//
+set directory=~/.vim/.swp//
+set undodir=~/.vim/.undo//
+set history=9999
 
 "GUI
 if has("gui_running")

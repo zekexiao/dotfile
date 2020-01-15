@@ -12,6 +12,13 @@ fork from [skywind3000/vim-init](https://github.com/skywind3000/vim-init)
 
 # requirment
 
+```
+mkdir ~/.vim/.backup/
+mkdir ~/.vim/.swp/
+mkdir ~/.vim/.undo/
+```
+for backup/swap/undo
+
 [vim-plug](https://github.com/junegunn/vim-plug) for plugs
 
 [Nerd Font](https://github.com/ryanoasis/nerd-fonts) for icon
