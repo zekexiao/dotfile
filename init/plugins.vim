@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
     Plug 't9md/vim-choosewin'
     Plug 'preservim/nerdtree'
     Plug 'ryanoasis/vim-devicons'
+    Plug 'skywind3000/asyncrun.vim'
 call plug#end()
 
 "Scheme
@@ -32,7 +33,7 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 nmap <silent> <leader>ld <Plug>(coc-definition)
 nmap <silent> <leader>ly <Plug>(coc-type-definition)
@@ -58,3 +59,9 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 map <leader>fn :NERDTreeToggle<CR>
 map <C-n> :NERDTreeToggle<CR>
+
+"Asyncrun
+let g:asyncrun_last = 2
+nnoremap <leader>rs :call asyncrun#quickfix_toggle(6)<cr>
+nnoremap <leader>rr :AsyncRun 
+nnoremap <leader>rf :%AsyncRun 
