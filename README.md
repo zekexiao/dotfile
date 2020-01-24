@@ -49,3 +49,14 @@ rustup component add rls rust-analysis rust-src
 sudo apt install llvm clang clang-tools lldb llvm-dev
 ```
 
+## [vim-clap](https://github.com/liuchengxu/vim-clap) requirement
+
+[BurntSushu/ripgrep](https://github.com/BurntSushi/ripgrep)
+[sharkdp/fd](https://github.com/sharkdp/fd)
+
+## coc.nvim extension
+
+```
+:CocInstall coc-json coc-snippets
+```
+
