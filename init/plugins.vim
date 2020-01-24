@@ -3,16 +3,14 @@ call plug#begin('~/.vim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'jiangmiao/auto-pairs'
     Plug 'itchyny/lightline.vim'
-    if has("win64") || has("win32") || has("win16")
-        Plug 'Yggdroot/LeaderF', { 'do': './install.bat' }
-    else
-        Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
-    endif
     Plug 'mhinz/vim-startify'
     Plug 't9md/vim-choosewin'
     Plug 'preservim/nerdtree'
     Plug 'ryanoasis/vim-devicons'
     Plug 'skywind3000/asyncrun.vim'
+    Plug 'luochen1990/rainbow'
+    Plug 'liuchengxu/vista.vim'
+    Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 call plug#end()
 
 "Scheme
@@ -44,15 +42,6 @@ xmap <leader>lf  <Plug>(coc-format-selected)
 nmap <leader>lf  <Plug>(coc-format-selected)
 nmap <leader>lx  <Plug>(coc-fix-current)
 
-"Leaderf
-let g:Lf_ShortcutF = "<leader>ff"
-noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
-noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
-noremap <leader>ft :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
-noremap <leader>fl :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
-let g:Lf_PreviewInPopup = 1
-let g:Lf_WindowPosition = 'popup'
-
 "Nerdtree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
@@ -68,3 +57,13 @@ nnoremap <leader>rf :%AsyncRun
 
 "config AutoPair for C-h 
 let g:AutoPairsMapCh = 0
+
+"Rainbow
+let g:rainbow_active = 1
+
+"Clap
+noremap <leader>ff :Clap files<cr>
+noremap <leader>ft :Clap tags<cr>
+noremap <leader>fb :Clap blines<cr>
+noremap <leader>fg :Clap grep<cr>
+noremap <leader>ll :Clap loclist<cr>
