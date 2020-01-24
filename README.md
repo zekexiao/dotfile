@@ -12,6 +12,8 @@ fork from [skywind3000/vim-init](https://github.com/skywind3000/vim-init)
 
 # requirment
 
+## create folders
+
 ```
 mkdir ~/.vim/.backup/
 mkdir ~/.vim/.swp/
@@ -19,14 +21,31 @@ mkdir ~/.vim/.undo/
 ```
 for backup/swap/undo
 
-[vim-plug](https://github.com/junegunn/vim-plug) for plugs
+## [vim-plug](https://github.com/junegunn/vim-plug) for plugs
 
-[Nerd Font](https://github.com/ryanoasis/nerd-fonts) for icon
+```
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
 
-[nodejs](https://nodejs.org/en/download/) for coc.nvim
+## [Nerd Font](https://github.com/ryanoasis/nerd-fonts) for icon
 
-[rls](https://github.com/rust-lang/rls) for rust
+## [nodejs](https://nodejs.org/en/download/) for coc.nvim
 
-[ccls](https://github.com/MaskRay/ccls) for C++
+```
+curl -sL install-node.now.sh/lts | bash
+```
 
+## [rls](https://github.com/rust-lang/rls) for rust
+
+```
+rustup update
+rustup component add rls rust-analysis rust-src
+```
+
+## [clangd](http://clang.llvm.org/) for C++
+
+```
+sudo apt install llvm clang clang-tools lldb llvm-dev
+```
 
