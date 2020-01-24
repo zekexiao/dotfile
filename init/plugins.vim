@@ -11,6 +11,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'luochen1990/rainbow'
     Plug 'liuchengxu/vista.vim'
     Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
+    Plug 'mhinz/vim-signify'
 call plug#end()
 
 "Scheme
@@ -67,3 +68,9 @@ noremap <leader>ft :Clap tags<cr>
 noremap <leader>fb :Clap blines<cr>
 noremap <leader>fg :Clap grep<cr>
 noremap <leader>ll :Clap loclist<cr>
+
+"Signify Git
+noremap <leader>gg :SignifyToggle<cr>
+noremap <leader>gh :SignifyToggleHighlight<cr>
+noremap <leader>gd :SignifyDiff<cr>
+noremap <leader>gl :SignifyList<cr>
