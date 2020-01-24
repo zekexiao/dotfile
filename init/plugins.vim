@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'liuchengxu/vista.vim'
     Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
     Plug 'mhinz/vim-signify'
+    Plug 'honza/vim-snippets'
 call plug#end()
 
 "Scheme
@@ -24,14 +25,16 @@ let g:lightline = {
 nmap - <Plug>(choosewin)
 
 "Coc
-inoremap <silent><expr> <TAB>
+inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
+
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 nmap <silent> <leader>ld <Plug>(coc-definition)
@@ -42,6 +45,7 @@ nmap <leader>ln <Plug>(coc-rename)
 xmap <leader>lf  <Plug>(coc-format-selected)
 nmap <leader>lf  <Plug>(coc-format-selected)
 nmap <leader>lx  <Plug>(coc-fix-current)
+imap <C-e> <Plug>(coc-snippets-expand)
 
 "Nerdtree
 autocmd StdinReadPre * let s:std_in=1
