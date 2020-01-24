@@ -65,3 +65,6 @@ let g:asyncrun_last = 2
 nnoremap <leader>rs :call asyncrun#quickfix_toggle(6)<cr>
 nnoremap <leader>rr :AsyncRun 
 nnoremap <leader>rf :%AsyncRun 
+
+"config AutoPair for C-h 
+let g:AutoPairsMapCh = 0
