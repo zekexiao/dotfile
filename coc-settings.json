@@ -1,5 +1,4 @@
 {
-  "suggest.autoTrigger": "trigger",
   "languageserver": {
     "clangd": {
       "command": "clangd",
