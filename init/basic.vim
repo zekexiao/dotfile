@@ -61,9 +61,5 @@ set history=9999
 
 "GUI
 if has("gui_running")
-    if has("gui_win32")
-        set guifont=Hack\ Nerd\ Font:h12
-    else
-        set guifont=Hack\ Nerd\ Font\ 12
-    endif
+    set guifont=Hack\ Nerd\ Font\ 12
 endif
