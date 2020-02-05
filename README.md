@@ -36,11 +36,12 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 curl -sL install-node.now.sh/lts | bash
 ```
 
-## [rls](https://github.com/rust-lang/rls) for rust
+## [rust-analyzer](https://github.com/rust-analyzer/rust-analyzer) for rust
 
 ```
 rustup update
-rustup component add rls rust-analysis rust-src
+git clone https://github.com/rust-analyzer/rust-analyzer && cd rust-analyzer
+cargo xtask install --server
 ```
 
 ## [clangd](http://clang.llvm.org/) for C++
