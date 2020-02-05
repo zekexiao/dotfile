@@ -1,5 +1,5 @@
 call plug#begin('~/.vim/plugged')
-    Plug 'arcticicestudio/nord-vim'
+    Plug 'NLKNguyen/papercolor-theme'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'jiangmiao/auto-pairs'
     Plug 'itchyny/lightline.vim'
@@ -15,9 +15,11 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 "Scheme
-colorscheme nord
+set t_Co=256
+set background=light
+colorscheme PaperColor
 let g:lightline = {
-      \ 'colorscheme': 'nord',
+      \ 'colorscheme': 'PaperColor',
       \ }
 
 "choosewin
