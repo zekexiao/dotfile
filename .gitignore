@@ -3,4 +3,6 @@
 !coc-settings.json
 !init
 !init/*
+!autoload
+!autoload/*
 !README.md
