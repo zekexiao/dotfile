@@ -16,7 +16,7 @@ call plug#end()
 
 "Scheme
 set t_Co=256
-set background=light
+set background=dark
 colorscheme PaperColor
 let g:lightline = {
       \ 'colorscheme': 'PaperColor',
@@ -46,7 +46,7 @@ nmap <leader>ln <Plug>(coc-rename)
 xmap <leader>lf  <Plug>(coc-format-selected)
 nmap <leader>lf  <Plug>(coc-format-selected)
 nmap <leader>lx  <Plug>(coc-fix-current)
-imap <C-e> <Plug>(coc-snippets-expand)
+imap <C-e>  <Plug>(coc-snippets-expand)
 
 "Nerdtree
 autocmd StdinReadPre * let s:std_in=1

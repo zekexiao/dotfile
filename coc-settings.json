@@ -11,5 +11,6 @@
       "filetypes": ["rust"],
       "rootPatterns": ["Cargo.toml"]
     }
-  }
+  },
+  "http.proxy": "127.0.0.1:1081"
 }
