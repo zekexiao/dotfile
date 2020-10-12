@@ -23,6 +23,8 @@ for backup/swap/undo
 
 ## [vim-plug](https://github.com/junegunn/vim-plug) for plugs
 
+Do not needs anymore. already included.
+
 ```
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -44,15 +46,30 @@ git clone https://github.com/rust-analyzer/rust-analyzer && cd rust-analyzer
 cargo xtask install --server
 ```
 
-## [clangd](http://clang.llvm.org/) for C++
+or download the binary from the release page and change name to `rust-analyzer`
+
+and add to path
+
+
+## [ccls](http://github.com/MaskRay/ccls) for C++
 
 ```
-sudo apt install llvm clang clang-tools lldb llvm-dev
+sudo apt install llvm clang libclang-dev clang-tools lldb llvm-dev cmake
+git clone --depth=1 --recursive https://github.com/MaskRay/ccls
+cd ccls
+cmake -H. -BRelease -DCMAKE_BUILD_TYPE=Release \
+          -DCMAKE_PREFIX_PATH=/usr/lib/llvm-10 \
+          -DLLVM_INCLUDE_DIR=/usr/lib/llvm-10/include \
+          -DLLVM_BUILD_INCLUDE_DIR=/usr/include/llvm-10/
+cmake --build Release
+
 ```
+
+and add to path
+
 
 ## coc.nvim extension
 
 ```
 :CocInstall coc-json coc-snippets
 ```
-
