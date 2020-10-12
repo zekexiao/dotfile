@@ -35,7 +35,7 @@ func! CompileRunFile()
     if &filetype == 'c'
         exec "!gcc % -o %.out && ./%.out"
     elseif &filetype == 'cpp'
-        exec "!g++ -std=c++11 % -Wall -g -o %.out && ./%.out"
+        exec "!clang++ -std=c++17 % -Wall -g -o %.out && ./%.out"
     elseif &filetype == 'sh'
         :!%
     endif
