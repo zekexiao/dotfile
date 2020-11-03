@@ -12,30 +12,16 @@ fork from [skywind3000/vim-init](https://github.com/skywind3000/vim-init)
 
 # requirment
 
-## create folders
-
-```
-mkdir ~/.vim/.backup/
-mkdir ~/.vim/.swp/
-mkdir ~/.vim/.undo/
-```
-for backup/swap/undo
-
 ## [vim-plug](https://github.com/junegunn/vim-plug) for plugs
 
 Do not needs anymore. already included.
-
-```
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-```
 
 ## [Nerd Font](https://github.com/ryanoasis/nerd-fonts) for icon
 
 ## [nodejs](https://nodejs.org/en/download/) for coc.nvim
 
 ```
-curl -sL install-node.now.sh/lts | bash
+curl -sL install-node.now.sh/lts | sudo bash
 ```
 
 ## [rust-analyzer](https://github.com/rust-analyzer/rust-analyzer) for rust
