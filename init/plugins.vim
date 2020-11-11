@@ -11,6 +11,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'luochen1990/rainbow'
     Plug 'mhinz/vim-signify'
     Plug 'honza/vim-snippets'
+    Plug 'derekwyatt/vim-fswitch'
     Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 call plug#end()
 
@@ -32,9 +33,9 @@ inoremap <silent><expr> <Tab>
       \ coc#refresh()
 inoremap <silent><expr> <c-\> coc#refresh()
 function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+      let col = col('.') - 1
+        return !col || getline('.')[col - 1]  =~# '\s'
+    endfunction
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -81,3 +82,6 @@ noremap <leader>gg :SignifyToggle<cr>
 noremap <leader>gh :SignifyToggleHighlight<cr>
 noremap <leader>gd :SignifyDiff<cr>
 noremap <leader>gl :SignifyList<cr>
+
+"vim-fswitch
+nmap <silent> <Leader>ls :FSHere<cr>
