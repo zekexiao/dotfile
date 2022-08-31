@@ -1,5 +1,5 @@
 call plug#begin('~/.vim/plugged')
-    Plug 'NLKNguyen/papercolor-theme'
+    Plug 'arcticicestudio/nord-vim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'jiangmiao/auto-pairs'
     Plug 'itchyny/lightline.vim'
@@ -17,28 +17,34 @@ call plug#end()
 
 "Scheme
 set t_Co=256
-set background=dark
-colorscheme PaperColor
+"set background=dark
+colorscheme nord
 let g:lightline = {
-      \ 'colorscheme': 'PaperColor',
+      \ 'colorscheme': 'nord',
       \ }
 
 "choosewin
 nmap - <Plug>(choosewin)
 
 "Coc
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
-inoremap <silent><expr> <c-\> coc#refresh()
-function! s:check_back_space() abort
-      let col = col('.') - 1
-        return !col || getline('.')[col - 1]  =~# '\s'
-    endfunction
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
 nmap <silent> <leader>ld <Plug>(coc-definition)
 nmap <silent> <leader>ly <Plug>(coc-type-definition)
 nmap <silent> <leader>li <Plug>(coc-implementation)
@@ -66,11 +72,8 @@ nnoremap <leader>rf :%AsyncRun
 let g:AutoPairsMapCh = 0
 
 "Leaderf
-let g:Lf_ShortcutF = "<leader>ff"
-noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
-noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
-noremap <leader>ft :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
-noremap <leader>fl :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
+let g:Lf_ShortcutF = "<C-p>"
+noremap <C-t> :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
 let g:Lf_PreviewInPopup = 1
 let g:Lf_WindowPosition = 'popup'
 

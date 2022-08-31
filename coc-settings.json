@@ -1,20 +1,10 @@
 {
   "languageserver": {
-    "ccls": {
-      "command": "ccls",
+    "clangd": {
+      "command": "clangd",
       "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
-      "filetypes": ["c", "cpp", "objc", "objcpp", "cc", "c++"],
-      "initializationOptions": {
-          "cache": {
-              "directroy": "/tmp/ccls"
-          }
-      }
-    },
-    "rust": {
-      "command": "rust-analyzer",
-      "filetypes": ["rust"],
-      "rootPatterns": ["Cargo.toml"]
+      "filetypes": ["c", "cpp", "objc", "objcpp", "cc", "c++"]
     }
   },
-  "http.proxy": "127.0.0.1:1081"
+  "http.proxy": "127.0.0.1:7891"
 }

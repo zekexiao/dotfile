@@ -24,38 +24,10 @@ Do not needs anymore. already included.
 curl -sL install-node.now.sh/lts | sudo bash
 ```
 
-## [rust-analyzer](https://github.com/rust-analyzer/rust-analyzer) for rust
-
-```
-rustup update
-git clone https://github.com/rust-analyzer/rust-analyzer && cd rust-analyzer
-cargo xtask install --server
-```
-
-or download the binary from the release page and change name to `rust-analyzer`
-
-and add to path
-
-
-## [ccls](http://github.com/MaskRay/ccls) for C++
-
-```
-sudo apt install llvm clang libclang-dev clang-tools lldb llvm-dev cmake
-git clone --depth=1 --recursive https://github.com/MaskRay/ccls
-cd ccls
-cmake -H. -BRelease -DCMAKE_BUILD_TYPE=Release \
-          -DCMAKE_PREFIX_PATH=/usr/lib/llvm-10 \
-          -DLLVM_INCLUDE_DIR=/usr/lib/llvm-10/include \
-          -DLLVM_BUILD_INCLUDE_DIR=/usr/include/llvm-10/
-cmake --build Release
-
-```
-
-and add to path
-
-
 ## coc.nvim extension
+clangd for c++
+server-d for dlang
 
 ```
-:CocInstall coc-json coc-snippets
+:CocInstall coc-json coc-snippets coc-dlang
 ```

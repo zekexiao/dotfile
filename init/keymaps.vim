@@ -22,6 +22,7 @@ nnoremap ^ g^
 " for bash need set `stty -ixon` 
 nmap <c-s> :w<cr>
 imap <c-s> <esc>:w<cr>a
+vnoremap <C-y> "+y
 
 "修改leader key
 let mapleader=","
@@ -38,5 +39,7 @@ func! CompileRunFile()
         exec "!clang++ -std=c++17 % -Wall -g -o %.out && ./%.out"
     elseif &filetype == 'sh'
         :!%
+    elseif &filetype == 'd'
+        exec "!dmd % && ./%"
     endif
 endfunc
