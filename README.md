@@ -26,8 +26,8 @@ curl -sL install-node.now.sh/lts | sudo bash
 
 ## coc.nvim extension
 clangd for c++
-server-d for dlang
+zls for zig
 
 ```
-:CocInstall coc-json coc-snippets coc-dlang
+:CocInstall coc-json coc-snippets
 ```

@@ -27,19 +27,3 @@ vnoremap <C-y> "+y
 "修改leader key
 let mapleader=","
 let maplocalleader=","
-
-nmap <F5> :!jj
-imap <F5> <esc>:!g++ -std=c++11 % -Wall -g -o %.out && ./%.out<CR>
-map <F5> :call CompileRunFile()<CR>
-func! CompileRunFile()
-    exec "w"
-    if &filetype == 'c'
-        exec "!gcc % -o %.out && ./%.out"
-    elseif &filetype == 'cpp'
-        exec "!clang++ -std=c++17 % -Wall -g -o %.out && ./%.out"
-    elseif &filetype == 'sh'
-        :!%
-    elseif &filetype == 'd'
-        exec "!dmd % && ./%"
-    endif
-endfunc

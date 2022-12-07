@@ -4,7 +4,10 @@
       "command": "clangd",
       "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
       "filetypes": ["c", "cpp", "objc", "objcpp", "cc", "c++"]
+    },
+    "zls" : {
+      "command": "zls",
+      "filetypes": ["zig"]
     }
   },
-  "http.proxy": "127.0.0.1:7891"
 }
