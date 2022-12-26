@@ -4,7 +4,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'itchyny/lightline.vim'
     Plug 'mhinz/vim-startify'
     Plug 't9md/vim-choosewin'
-    Plug 'preservim/nerdtree'
     Plug 'ryanoasis/vim-devicons'
     Plug 'luochen1990/rainbow'
     Plug 'mhinz/vim-signify'
@@ -13,6 +12,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
     Plug 'voldikss/vim-floaterm'
     Plug 'ziglang/zig.vim'
+    Plug 'sickill/vim-monokai'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
@@ -20,9 +20,10 @@ call plug#end()
 "Scheme
 set t_Co=256
 "set background=dark
-colorscheme nord
+set termguicolors
+colorscheme monokai
 let g:lightline = {
-      \ 'colorscheme': 'nord',
+      \ 'colorscheme': 'monokai',
       \ }
 
 "choosewin
