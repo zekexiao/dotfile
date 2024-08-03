@@ -58,6 +58,9 @@ let g:zig_fmt_autosave = 0
 "vim-floaterm
 let g:floaterm_autoclose = 2
 let g:floaterm_keymap_toggle = '<c-t>'
+if has('win64') || has('win32')
+    let g:floaterm_shell='powershell'
+endif
 tmap <Esc> <c-\><c-n> 
 
 "coc.nvim

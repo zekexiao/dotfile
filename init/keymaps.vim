@@ -25,5 +25,5 @@ imap <c-s> <esc>:w<cr>a
 vnoremap <C-y> "+y
 
 "修改leader key
-let mapleader=","
-let maplocalleader=","
+let mapleader=" "
+let maplocalleader=" "
