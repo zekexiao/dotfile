@@ -1,0 +1,60 @@
+-- Neovim Lua 配置
+vim.o.backspace = 'eol,start,indent'
+vim.o.autoindent = true
+vim.o.cindent = true
+vim.o.winaltkeys = 'no'
+vim.o.wrap = true
+vim.o.linebreak = true
+vim.o.wrapmargin = 4
+vim.o.scrolloff = 10
+vim.o.ttimeout = true
+vim.o.ttimeoutlen = 50
+vim.o.ruler = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.hlsearch = true
+vim.o.incsearch = true
+vim.o.encoding = 'utf-8'
+vim.o.fileencoding = 'utf-8'
+vim.o.fileencodings = 'usc-bom,utf-8,gbk,gb18030,big5,euc-jp,latin1'
+vim.o.showmatch = true
+vim.o.matchtime = 2
+vim.o.display = 'lastline'
+vim.o.lazyredraw = true
+vim.o.listchars = 'tab:| ,trail:.,extends:>,precedes:<'
+vim.o.fileformats = 'unix,dos,mac'
+vim.o.laststatus = 2
+vim.wo.number = true
+vim.wo.cursorline = true
+vim.wo.signcolumn = 'yes'
+vim.o.showtabline = 2
+vim.wo.list = true
+vim.o.showcmd = true
+vim.o.splitright = true
+vim.o.termguicolors = true
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
+vim.o.expandtab = false
+vim.o.softtabstop = 4
+vim.o.shortmess = vim.o.shortmess .. 'c'
+vim.o.cmdheight = 2
+vim.o.updatetime = 300
+vim.o.hidden = true
+vim.o.mouse = 'a'
+vim.o.selectmode = 'mouse,key'
+vim.o.errorbells = false
+vim.o.autoread = true
+vim.o.backup = true
+vim.o.writebackup = true
+vim.o.undofile = true
+vim.o.swapfile = true
+local data_dir = vim.fn.stdpath("data")
+vim.o.backupdir = data_dir .. '/backup/'
+vim.o.directory = data_dir .. '/swap/'
+vim.o.undodir = data_dir .. '/undo/'
+vim.o.history = 9999
+
+-- GUI 设置
+if vim.fn.has("gui_running") == 1 then
+    vim.o.guifont = 'Cascadia Code:h16'
+end
