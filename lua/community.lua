@@ -5,5 +5,5 @@ return {
 	{ import = "astrocommunity.pack.lua" },
 	{ import = "astrocommunity.pack.cpp" },
 	{ import = "astrocommunity.pack.ruby" },
-	{ import = "astrocommunity.completion.avante-nvim" },
+	{ import = "astrocommunity.completion.fittencode-nvim" },
 }
