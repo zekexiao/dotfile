@@ -19,6 +19,8 @@ return {
 					"c",
 					"python",
 					"lua",
+					"qml",
+					"qmljs",
 				},
 				ignore_filetypes = { -- disable format on save for specified filetypes
 					-- "python",
@@ -36,6 +38,7 @@ return {
 		-- enable servers that you already have installed without mason
 		servers = {
 			"clangd",
+			"qmlls",
 		},
 		-- customize language server configuration options passed to `lspconfig`
 		---@diagnostic disable: missing-fields
@@ -52,6 +55,12 @@ return {
 					"--header-insertion=iwyu",
 				},
 				capabilities = { offsetEncoding = "utf-8" },
+			},
+			qmlls = {
+				filetypes = { "qml", "qmljs" },
+				cmd = {
+					"C:\\Qt\\6.8.2\\msvc2022_64\\bin\\qmlls.exe",
+				},
 			},
 		},
 		-- mappings to be set up on attaching of a language server
