@@ -18,7 +18,6 @@ return {
 					"cpp",
 					"c",
 					"python",
-					"ruby",
 					"lua",
 				},
 				ignore_filetypes = { -- disable format on save for specified filetypes
@@ -37,7 +36,6 @@ return {
 		-- enable servers that you already have installed without mason
 		servers = {
 			"clangd",
-			"solargraph",
 		},
 		-- customize language server configuration options passed to `lspconfig`
 		---@diagnostic disable: missing-fields
@@ -47,10 +45,9 @@ return {
 				filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
 				cmd = {
 					"clangd",
-					"-j=8",
+					"-j=12",
 					"--clang-tidy",
 					"--background-index",
-					"--compile-commands-dir=build",
 					"--all-scopes-completion",
 					"--header-insertion=iwyu",
 				},

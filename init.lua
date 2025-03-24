@@ -30,3 +30,7 @@ vim.o.tabstop = 4
 vim.o.expandtab = false
 vim.o.softtabstop = 4
 vim.o.scrolloff = 14
+
+vim.keymap.set("n", "<leader>mr", ":CMakeRun<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>mb", ":CMakeBuild<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>ms", ":CMakeSettings<CR>", { noremap = true, silent = true })
