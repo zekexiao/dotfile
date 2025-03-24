@@ -26,10 +26,16 @@ return {
 				end)
 				return
 			end
-			-- AI accept
+
 			if vim.g.ai_accept and vim.g.ai_accept() then
+				-- AI accept
 				return
 			end
+
+			if cmp.visible() then
+				cmp.select_next_item()
+			end
+
 			-- Fallback
 			fallback()
 		end, { "i", "s" })
@@ -52,6 +58,10 @@ return {
 					vim.snippet.jump(-1)
 				end)
 				return
+			end
+
+			if cmp.visible() then
+				cmp.select_prev_item()
 			end
 			-- Fallback
 			fallback()
